@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adult Search Checker</title>
+    <style>
+        .form {
+            width: 70%;
+            margin: 50px auto;
+            height: auto;
+
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            outline: none;
+            font-size: 18px;
+
+        }
+
+        input[type="submit"] {
+            width: 200px;
+            margin: 5px 10px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 18px;
+            background: #2980b9;
+            outline: none;
+            border: none;
+            color: white;
+            transition: 0.6s;
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 500px;
+            background: #A7CFDF;
+            background: linear-gradient(to right, #CB60B3 0%, #C146A1 50%, #A80077 51%, #DB36A4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <form action="http://www.google.com/search" method="get">
+            <input type="text" id="searchData" placeholder="Search Here" name="q" />
+            <h2 style="text-align: center;"><input id="btn" type="submit" value="Search"></h2>
+        </form>
+    </div>
+    <div>
+        <h3>A creation of Imran's IT Zone</h3>
+    </div>
+
+</body>
+
+</html>
+<script>
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let SearchData = document.getElementById('searchData');
+        let MysearchData = SearchData.value.trim().toUpperCase();
+        if (MysearchData == "PORN" || MysearchData == "SEX" || MysearchData == "PORNHD" || MysearchData == "HDPORN" || MysearchData == "HOT" || MysearchData == "NACKED" || MysearchData == "XNXX" || MysearchData == "HOT videos" || MysearchData == "SUNNEY LEONE SEX" || MysearchData == "MIA KHALIFA" || MysearchData == "XHMASTER" || MysearchData == "XVIDEOS") {
+            document.getElementById('btn').disabled = true;
+            document.getElementById("btn").style.opacity = 0.5;
+            document.getElementById("btn").style.cursor = "not-allowed";
+            setTimeout(() => {
+                window.open('https://www.youtube.com/shorts/Jzyiv8gyvhs?feature=share', '_blank');
+            }, 1000);
+            setTimeout(() => {
+                if (confirm(`Are you want to read a book that is against ${MysearchData} content?`) == true) {
+                    window.open('https://drive.google.com/file/d/1opfzju09Ryq9nfa6yJAfAR_0M4Z0E5xh/view', '_blank');
+                }
+                else {
+                    alert("It's Ok Mr. User");
+                }
+            }, 10000);
+            setTimeout(() => {
+                document.getElementById("btn").disabled = false;
+                document.getElementById("btn").style.opacity = 1;
+                document.getElementById("btn").style.cursor = "pointer";
+            }, 20000);
+        }
+        else {
+
+            console.log(MysearchData);
+            setTimeout(() => {
+                window.open(`https://www.google.com/search?q=${MysearchData}`, '_blank')
+            }, 1000)
+        }
+    })
+
+</script>
